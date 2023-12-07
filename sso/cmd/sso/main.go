@@ -4,6 +4,7 @@ import (
 	"log/slog"
 	"os"
 
+	"github.com/irsCooper/gRPC-postgresql-go/sso/internal/app"
 	"github.com/irsCooper/gRPC-postgresql-go/sso/internal/config"
 )
 
@@ -25,11 +26,13 @@ func main() {
 		slog.Int("port", cfg.GRPC.Port),
 	)
 
-	log.Debug("debug messsage")
+	application := app.New(log, cfg.GRPC.Port, cfg.StoragePath, cfg.TokenTTL)
 
-	log.Error("error message")
+	log.Info("tututu")
 
-	log.Warn("warning message")
+	application.GRPCSrv.MustRun()
+
+	log.Info("tututu")
 }
 
 
