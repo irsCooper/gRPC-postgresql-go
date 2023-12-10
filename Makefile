@@ -9,3 +9,6 @@ run:
 
 generete:
 	cd ./protos && tasks generate
+
+migrate:
+	go run ./sso/cmd/migrator --storage-path=./sso/storage/sso.db --migrations-path=./sso/migrations
