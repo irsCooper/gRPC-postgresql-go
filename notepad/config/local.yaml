@@ -1,0 +1,5 @@
+env: "lokal"
+storage_path: "./storage/notepad.db"
+grpc:
+  port: 45045
+  timeout: 10h
